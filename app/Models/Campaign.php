@@ -13,7 +13,9 @@ class Campaign extends Model
         'foundation_profile_id', 'category_id', 'title',
         'description', 'goal_amount', 'collected_amount', 'deadline'
     ];
-
+protected $casts = [
+    'deadline' => 'datetime', // Convierte automáticamente a Carbon
+];
     public function foundationProfile()
     {
         return $this->belongsTo(FoundationProfile::class);
